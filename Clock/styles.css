@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 200px;
+
+    background-color: rgb(99, 46, 153);
+}
+
+.counter {
+    color: lightpink;
+    font-size: 52px;
+    font-weight: 500;
+}
+
+.button {
+    width: 200px;
+    height: 100px;
+
+    margin: 20px;
+
+    color: aliceblue;
+    font-size: 52px;
+
+    background-color: darkblue;
+    border-radius: 20px;
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(3, 3, 57);
+    transition: 1s;
+}
+
