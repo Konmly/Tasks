@@ -1,7 +1,7 @@
 let intervalId = null;
-const time = document.querySelector(".counter");
+const time = document.querySelector(".time");
 
-function getClockTick() {
+function setClockTick() {
   let clock = new Date();
   time.textContent = clock.toLocaleTimeString();
 }
@@ -9,9 +9,11 @@ function getClockTick() {
 const buttonStart = document.querySelector(".button-start");
 
 function clockStart() {
-  if (intervalId === null) {
-    intervalId = setInterval(getClockTick, 1000);
+  if (intervalId !== null) {
+    return;
   }
+
+  intervalId = setInterval(setClockTick, 1000);
 }
 
 buttonStart.addEventListener("click", clockStart);
