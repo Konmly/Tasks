@@ -1,18 +1,18 @@
 const ul = document.querySelector(".tree");
 
-const li = document.querySelectorAll("li");
+const li = ul.querySelectorAll("li");
 
 li.forEach((item) => {
   const span = document.createElement("SPAN");
-  span.classList.add(".p");
+  span.classList.add("span");
   item.prepend(span); // добавили перед тегом span
   span.append(span.nextSibling); // добавили после тега span
 });
 
-ul.addEventListener("click", function (event) {
-  const children = event.target.parentNode.querySelector("ul"); // у li, что мы нашли находим родителся его ul внутри 
+ul.addEventListener("click", (event) => {
+  const children = event.target.closest("ul").querySelector("ul"); // у li, что мы нашли находим родителя, и у родителя ul внутри
 
-  if (event.target.tagName != "SPAN") {
+  if (!event.target.classList.contains("span")) {
     return;
   }
 
