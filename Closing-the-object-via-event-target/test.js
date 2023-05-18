@@ -1,15 +1,14 @@
-const divCollectionPane = document.querySelectorAll(".pane");
-const div = document.querySelector(".pane");
+const panesList = document.querySelectorAll(".pane");
 
-divCollectionPane.forEach((item) => {
+panesList.forEach((item) => {
   const button = document.createElement("button");
   button.classList.add("remove-button");
   button.textContent = "[x]";
   item.append(button);
 });
 
-document.addEventListener("click", function (event) {
-  if (event.target.className != "remove-button") {
+document.addEventListener("click", (event) => {
+  if (!event.target.classList.contains("remove-button")) {
     return;
   }
 
