@@ -1,4 +1,4 @@
-const staticBlock = document.querySelector(".static-block");
+const staticBox = document.querySelector(".static-block");
 const floatingBlock = document.querySelector(".floating-block");
 
 function objectPositioning(block, position, elem) {
@@ -31,6 +31,8 @@ function objectPositioning(block, position, elem) {
       }px`; // левый нижний внутренний угол
       elem.style.left = `${coords.left}px`;
       break;
+    default:
+      break;
   }
 }
-objectPositioning(staticBlock, "bottomRightCorner", floatingBlock);
+objectPositioning(staticBox, "topRightCorner", floatingBlock);
