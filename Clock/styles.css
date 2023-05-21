@@ -9,7 +9,7 @@ body {
 }
 
 .time {
-    color: lightpink;
+    color: rgb(255,182,193); 
     font-size: 52px;
     font-weight: 500;
 }
