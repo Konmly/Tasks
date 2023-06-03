@@ -1,7 +1,7 @@
 function sortTable() {
   const table = document.querySelector(".table");
 
-  let rowsList = Array.from(table.rows).slice(1);
+  const rowsList = Array.from(table.rows).slice(1);
 
   rowsList.sort((first, second) =>
     first.cells[0].innerHTML > second.cells[0].innerHTML ? 1 : -1
