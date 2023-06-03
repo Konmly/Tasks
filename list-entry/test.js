@@ -1,15 +1,15 @@
-const firstListItem = document.querySelector("ul > li:first-child");
-const lastLiItem = document.querySelector("ul > li:last-child");
 const list = document.querySelector(".list");
+const firstListItem = list.querySelector("li:first-child");
+const lastListItem = list.querySelector("li:last-child");
 
-const fragment = new DocumentFragment(); 
+const fragment = new DocumentFragment();
 
-const ItemCat = document.createElement("li");
-ItemCat.textContent = "Cat";
+const itemCat = document.createElement("li");
+itemCat.textContent = "Cat";
 
-const ItemDog = document.createElement("li");
-ItemDog.textContent = "Dog";
+const itemDog = document.createElement("li");
+itemDog.textContent = "Dog";
 
-fragment.append(firstListItem, ItemCat, ItemDog, lastLiItem);
+fragment.append(firstListItem, itemCat, itemDog, lastListItem);
 
 list.appendChild(fragment);
