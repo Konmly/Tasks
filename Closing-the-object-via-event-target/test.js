@@ -12,7 +12,7 @@ document.addEventListener("click", (event) => {
     return;
   }
 
-  let pane = event.target.closest(".pane");
+  const pane = event.target.closest(".pane");
   pane.remove();
   //проверяем на класс
   //ищем родительский элемент с классом
