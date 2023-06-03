@@ -1,5 +1,5 @@
-const staticBox = document.querySelector(".static-block");
-const floatingBlock = document.querySelector(".floating-block");
+const staticBox = document.querySelector(".static-box");
+const floatingBox = document.querySelector(".floating-box");
 
 function objectPositioning(block, position, elem) {
   const coords = block.getBoundingClientRect();
@@ -35,4 +35,4 @@ function objectPositioning(block, position, elem) {
       break;
   }
 }
-objectPositioning(staticBox, "topRightCorner", floatingBlock);
+objectPositioning(staticBox, "topRightCorner", floatingBox);
