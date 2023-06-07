@@ -1,38 +1,42 @@
 const table = document.querySelector(".grid");
+const tableHeader = table.querySelector(".table-header");
 
 function sortTable(colNum, type) {
   const tbody = table.querySelector("tbody");
 
-  const arr = Array.from(tbody.rows);
+  const arr = Array.from(tbody.rows); //преобразуем в массив коллекцию элементов tbody
 
-  let compare;
+  let sortCallback;
 
   switch (type) {
     case "number":
-      compare = function (rowA, rowB) {
+      sortCallback = (rowA, rowB) => {
         return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
+        // rowA -строка, cells - ячейка, colNum - столбец, тут мы сравниваем значения числовые
       };
       break;
     case "string":
-      compare = function (rowA, rowB) {
+      sortCallback = (rowA, rowB) => {
         return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML
-          ? 1
+          ? // тут сравниваем значения строковые, если код буквы больше то 1, если меньше то -1
+            1
           : -1;
       };
-      default:
-        break;
+    default: // значение по умолчанию
+      break;
   }
 
-  arr.sort(compare);
-  tbody.append(...arr);
+  arr.sort(sortCallback); // в массив добавляем отсортированный колбек
+  tbody.append(...arr); // в тело лтаблицы добавляем отсортированный массив
 }
 
-document.addEventListener("click", function (event) {
-  if (event.target.tagName != "TH") {
+tableHeader.addEventListener("click", (event) => {
+  // по клику на столбец, начинается сортировка
+  const target = event.target.closest(".table-header-cell");
+
+  if (!target) {
     return;
   }
 
-  const e = event.target;
-
-  sortTable(e.cellIndex, e.dataset.type, "grid");
+  sortTable(target.cellIndex, target.dataset.type);
 });
