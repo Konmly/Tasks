@@ -1,17 +1,24 @@
 const linkList = document.querySelectorAll("a");
+const link = document.querySelector("a");
 
-linkList.forEach((item) => { // каждой ссылке даем класс link
+linkList.forEach((item) => {
+  // каждой ссылке даем класс link
   item.classList.add("link");
 });
 
 document.body.addEventListener("click", function (event) {
-  if (!event.target.closest(".link")) { // проверяем по классу
+  const link = event.target.closest(".link");
+
+  if (!link) {
+    // проверяем по классу
     return;
   }
 
   const answer = confirm("Вы точно хотите перейти по ссылке?"); // модальное окно на ок или отмена
 
-  if (answer === false) { // если отмена, то не переходим
-    event.preventDefault();
+  event.preventDefault();
+
+  if (answer === true) {
+    window.location.href = link.href;
   }
 });
