@@ -5,11 +5,11 @@ const listImg = document.querySelector(".thumbs");
 listImg.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const event = e.target.closest("a");
+  const link = e.target.closest("a");
 
-  if (!event) {
+  if (!link) {
     return;
   }
 
-  largeImg.src = event.href;
+  largeImg.src = link.href;
 });
