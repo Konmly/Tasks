@@ -1,24 +1,18 @@
 function isVisible(elem) {
-  if (
-    window.scrollY + elem.getBoundingClientRect().top < // если прокрутка экрана плюс координата элемента топ
-    window.scrollY + document.documentElement.clientHeight // если прокрутка экрана плюс высота окна
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+  return (
+    window.scrollY + elem.getBoundingClientRect().top <
+    window.scrollY + document.documentElement.clientHeight
+  );
 }
 
 function showVisible() {
-  for (let img of document.querySelectorAll("img")) {
-    let realSrc = img.dataset.src;
-    if (!realSrc) continue;
+  for (const img of document.querySelectorAll("img")) {
+    const realSrc = img.dataset.src;
+    if (!realSrc || !isVisible(img)) {
+      continue;
+    }
 
     if (isVisible(img)) {
-      // отключение кеширования
-      // эта строка должна быть удалена в "боевом" коде
-      realSrc += "?nocache=" + Math.random();
-
       img.src = realSrc;
 
       img.dataset.src = "";
