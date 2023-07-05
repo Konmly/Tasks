@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 200px;
+
+    background-color: yellowgreen;
+
+    font-size: 52px;
+    font-weight: 500;
+}
+
