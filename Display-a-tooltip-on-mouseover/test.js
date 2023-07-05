@@ -1,6 +1,6 @@
 const button = document.querySelector(".button-wrap");
 
-button.addEventListener("mouseover", function (event) {
+button.addEventListener("mouseover", (event) => {
   const tooltipText = event.target.dataset.hint;
 
   if (!tooltipText) {
@@ -24,7 +24,7 @@ button.addEventListener("mouseover", function (event) {
   }
 });
 
-button.addEventListener("mouseout", function () {
+button.addEventListener("mouseout", () => {
   const hintElement = document.querySelector(".hint");
 
   if (hintElement) {
