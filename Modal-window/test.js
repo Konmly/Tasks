@@ -41,7 +41,8 @@ modalWindow.addEventListener("keydown", (event) => {
 });
 
 buttonCancel.addEventListener("click", () => {
-  alert(null);
+  inputText.value = "";
+  alert(inputText.value);
   modalWindow.style.display = "none";
   document.body.style.background = "";
 });
