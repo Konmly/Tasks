@@ -35,9 +35,9 @@ document.addEventListener("mousedown", (e) => {
 
   document.addEventListener("mousemove", onMouseMove);
 
-  document.onmouseup = function () {
+  document.addEventListener("mouseup", () => {
     document.removeEventListener("mousemove", onMouseMove);
-  };
+  });
 });
 
 document.ondragstart = function () {
