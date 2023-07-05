@@ -31,5 +31,7 @@ mouseSprite.addEventListener("keydown", (event) => {
         mouseSprite.getBoundingClientRect().left - mouseSprite.offsetWidth
       }px`;
       break;
+    default:
+      break;
   }
 });
